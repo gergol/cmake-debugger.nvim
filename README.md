@@ -10,7 +10,7 @@ Installation using lazy:
 
 ```lua
 {
-  dir = "gergol/cmake-debugger.nvim",
+  "gergol/cmake-debugger.nvim",
   dependencies = {
     "mfussenegger/nvim-dap",
   },

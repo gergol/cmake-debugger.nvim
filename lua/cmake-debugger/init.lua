@@ -2,10 +2,9 @@ local M = {}
 
 
 function M.setup(opts)
-    print('Hello from nvim-cmake-debugger setup')
     local ok, dap = pcall(require, 'dap')
     if not ok then
-        print('ERROR: cmake-debugger requires nvim-dap')
+        assert(false, 'ERROR: cmake-debugger requires nvim-dap')
         return
     end
 
@@ -23,8 +22,6 @@ function M.setup(opts)
     end
 
     cmake_build_dir = vim.fn.expand(cmake_build_dir)
-    print('cmake_build_dir: ', cmake_build_dir)
-
 
     dap.adapters.cmake = {
         type = 'pipe',
